@@ -3,6 +3,10 @@
     justify-content: center;
     width: 100%;
 }
+header{
+    position: sticky;
+    top: 0;
+}
 #ChartJS{
     background-color: blue;
     color: white;
