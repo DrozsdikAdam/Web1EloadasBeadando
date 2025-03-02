@@ -1,26 +1,7 @@
-*{
-    box-sizing: border-box;
-}
-body{
-    margin: 0;
-    padding: 0;
-}
-header{
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1020;
-}
+
 .navbar{
     justify-content: center;
     width: 100%;
-}
-.container{
-    margin: 0;
-    width: 100%;
-}
-.navbar-Brand{
-    margin: 0;
 }
 #ChartJS{
     background-color: blue;
