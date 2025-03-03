@@ -13,3 +13,6 @@ header{
     background-color: blue;
     color: white;
 }
+.active{
+    border: 1px solid white;
+}
