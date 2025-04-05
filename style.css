@@ -5,9 +5,30 @@
     justify-content: center;
     width: 100%;
 }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  .dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* navbar vége*/
 header{
     position: sticky;
     top: 0;
+    z-index: 10;
 }
 #ChartJS{
     background-color: blue;
@@ -16,18 +37,41 @@ header{
 .active{
     border: 1px solid white;
 }
-.main-container{
+.bemutatkozas-main-container{
     position: relative;
     background-color: aqua;
     height: 100vh;
-    margin: 5px;
+    width: 1300px;
+    margin: 5px auto;
     border-radius: 10px;
+    display: flex;
+}
+
+.main-container{
+    position: relative;
+    background-color: aqua;
+    height: 100%;
+    width: 1300px;
+    margin: 5px auto;
+    border-radius: 10px;
+    display: flex;
+}
+
+.bemutatkozas-introduction{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 10%;
+    left: 50%;
+    width: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .introduction{
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 10%;
+    top: 80px;
     left: 50%;
     width: 460px;
     display: flex;
@@ -51,4 +95,20 @@ header{
     width: 400px;
     margin: 0 auto;
     text-align: justify;
+}
+/*HTML5 CSS RÉSZ*/
+.main-container-sections-html5{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 150px 10px 10px 10px;
+}
+.main-container-sections-html5 h3{
+    font-family: "Montserrat Underline", sans-serif;
+}
+#from{
+    margin: 0px 0px 5px 0px;
+}
+#datas{
+    margin:10px 0px;
 }
