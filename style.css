@@ -1,6 +1,9 @@
 *{
     box-sizing: border-box;
 }
+html{
+    scroll-padding-top: 70px;
+}
 .navbar{
     justify-content: center;
     width: 100%;
@@ -147,3 +150,24 @@ header{
     stroke-width:5;
     fill-rule:nonzero;
 }
+/*chartjs css rész*/
+.main-container-sections-chartjs{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 150px 10px 10px 10px;
+    margin: 150px auto;
+}
+.main-container-sections-chartjs h3{
+    font-family: "Montserrat Underline", sans-serif;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+    cursor: pointer;
+    text-align: center;
+  }
+  tr:hover {
+    background-color: #eef;
+  }
