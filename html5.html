@@ -74,7 +74,7 @@
                         }
                     </script>
                 </section>
-                <div class="web-workers" id="ketto">
+                <section class="web-workers" id="ketto">
                     <h3>Web Workers</h3>
                     <p>Adj meg 2 számot, hogy mettől meddig adjuk össze a számokat workerek segítségével.</p>
                     <input type="number" id="from" placeholder="Mettől"><br>
@@ -103,17 +103,14 @@
                             else {
                                 alert("Hiba..." );
                             }
-                        }
-                        function sayHello(){
-                            alert("Hahó...." );
-                        }
+                        };
                     </script>
-                </div>
-                <div class="server-sent events" id="harom">
+                </section>
+                <section class="server-sent events" id="harom">
                     <h3>Server-Sent Events</h3>
-                    <p>se úgy volt, hogy nem lehet szerver oldali nyelveket használni...</p>
-                </div>
-                <div class="geo-api" id="negy">
+                    <p>De úgy volt, hogy nem lehet szerver oldali nyelveket használni...</p>
+                </section>
+                <section class="geo-api" id="negy">
                     <h3>Geolocation API</h3>
                     <p>Kattints a gombra, hogy tudd, merre vagy!</p>
                     <button onclick="getLocation()">Hol vagyok?</button>
@@ -135,19 +132,64 @@
                         }
                     </script>
                     <p id="content-holder">Google maps: Waiting for GPS coordinates ...</p>
-                </div>
-                <div class="dad-api" id="ot">
+                </section>
+                <section class="dad-api" id="ot">
                     <h3>Drag and Drop API</h3>
-                    <p>work in progress</p>
-                </div>
-                <div class="canvas" id="hat">
+                    <p>Fogd meg a madarat, és húzd egyik negyzetből a másikba</p>
+                    <div class="divs">
+                        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            <img src="bird.png" draggable="true" ondragstart="drag(event)" id="drag1" width="100" height="100">
+                        </div>
+                        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                        <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                        <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    </div>
+                    <script>
+                        function allowDrop(ev) {
+                            ev.preventDefault();
+                        }
+                
+                        function drag(ev) {
+                            ev.dataTransfer.setData("text", ev.target.id);
+                        }
+                
+                        function drop(ev) {
+                            ev.preventDefault();
+                            var data = ev.dataTransfer.getData("text");
+                            ev.target.appendChild(document.getElementById(data));
+                        }
+                    </script>
+                </section>
+                <section class="canvas" id="hat">
                     <h3>Canvas</h3>
-                    <p>work in progress</p>
-                </div>
-                <div class="svg" id="het">
+                    <p>Válaszd ki, hogy milyen színű legyen a canvasod!</p>
+                    <div class="canvasinanout">
+                        <input type="color" id="colorPicker" value="#0000ff">
+                        <canvas id="myCanvas" width="250" height="150"></canvas>
+                    </div>
+                    <script>
+                        const c = document.getElementById("myCanvas");
+                        const ctx = c.getContext("2d");
+                        const colorPicker = document.getElementById("colorPicker");
+
+                        function drawCanvas(color) {
+                            ctx.fillStyle = color;
+                            ctx.fillRect(0, 0, c.width, c.height); //eltolás vízszintes, eltolás függőleges, magasság, szélesség
+                        }
+
+                        drawCanvas(colorPicker.value);
+
+                        colorPicker.addEventListener("input", function() {
+                            drawCanvas(this.value);
+                        });
+                    </script>
+                </section>
+                <section class="svg" id="het">
                     <h3>SVG</h3>
-                    <p>work in progress</p>
-                </div>
+                    <svg id="svg">
+                        <polygon id="polygon" points="100,10 40,198 190,78 10,78 160,198" />
+                    </svg>
+                </section>
             </div>
         </div>
     </main>

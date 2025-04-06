@@ -112,3 +112,38 @@ header{
 #datas{
     margin:10px 0px;
 }
+.divs{
+    display: grid;
+    grid-template-columns: repeat(2, 120px);
+}
+#div1, #div2, #div3, #div4{
+    width:100px; 
+    height:100px; 
+    margin:10px;
+    border:1px solid #aaaaaa;
+}
+.canvasinanout{
+    width: 290px;
+    height: 150px;
+    display: flex;
+}
+#myCanvas{
+    border: 3px solid black;
+}
+#colorPicker{
+    height: 100%;
+    width: 100%;
+    display: inline; 
+    margin-right: 5px;
+}
+#svg{
+    width: 200px;
+    height: 200px;
+}
+
+#polygon{
+    fill:rgb(0, 174, 255);
+    stroke:black;
+    stroke-width:5;
+    fill-rule:nonzero;
+}
