@@ -171,3 +171,40 @@ table, th, td {
   tr:hover {
     background-color: #eef;
   }
+ /*AJAX RÉSZ*/
+ .main-container-sections-ajax{
+    position: relative;
+    display: flex;
+    margin: 150px 10px 10px 10px;
+}
+
+.jobb, .bal{
+    flex: 1;
+    box-sizing: border-box;
+    width: 640px;
+}
+.jobb {
+    display: flex;
+    flex-direction: column;
+}
+.jobb h1{
+    text-align: center;
+}
+.main-container-sections-ajax h1{
+    font-family: "Montserrat Underline", sans-serif;
+}
+#gomb{
+    display: block;
+    margin: 10px auto 0px;
+    width: 150px;
+    border-radius: 5px;
+}
+#tablazat{
+    margin: 0px auto 20px ;
+}
+@media (max-width: 1000px) {
+    .main-container-sections-ajax {
+      flex-direction: column;
+    }
+    
+  }
