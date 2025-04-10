@@ -65,13 +65,13 @@
                         <tr>
                             <td align="right">x:</td><td><input type="number" min="0" id="x-oojs" name="x"></td>
                             <td align="right">y:</td><td><input type="number" min="0" id="y-oojs" name="y"></td>
-                            <td><button onclick="myimage.putAt(x.value,y.value)">Put At</button></td>
+                            <td><button onclick="myimage.putAt(document.getElementById('x-oojs').value,document.getElementById('y-oojs').value)">Put At</button></td>
                             <td><button onclick="myimage.show()">Show</button></td>
                         </tr>
                         <tr>
                             <td align="right">width:</td><td><input type="number" min="0" id="width-oojs" name="width"></td>
                             <td align="right">height:</td><td><input type="number" min="0" id="height-oojs" name="height"></td>
-                            <td><button onclick="myimage.resize(width.value,height.value)">Resize</button></td>
+                            <td><button onclick="myimage.resize(document.getElementById('width-oojs').value,document.getElementById('height-oojs').value)">Resize</button></td>
                             <td><button onclick="myimage.hide()">Hide</button></td>
                         </tr>
                         <tr>
