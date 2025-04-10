@@ -202,9 +202,36 @@ table, th, td {
 #tablazat{
     margin: 0px auto 20px ;
 }
+/*OOJS CSS RÉSZ*/
+.main-container-sections-oojs {
+    position: relative;
+    display: flex;
+    margin: 150px auto 10px auto;
+}
+
+.tablazat, .kep {
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.kep {
+    border: 1px dashed #ccc;
+    min-height: 100%;
+    width: 600px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+#width-oojs, #height-oojs, #x-oojs, #y-oojs{
+    width: 50px;
+}
 @media (max-width: 1000px) {
     .main-container-sections-ajax {
       flex-direction: column;
     }
-    
+    .main-container-sections-oojs {
+        flex-direction: column;
+        align-items: center;
+    }
   }
