@@ -50,10 +50,53 @@
     </header>
 
     <main>
-        <div class="main-container">
+        <div class="bemutatkozas-main-container">
             <div class="introduction">
                 <H2>Üdvözöljük a táblázat feladaton!</h2>
             </div>
+            <div class="main-container-sections-tablazat">
+                <div class="employee-form">
+                    <form onsubmit="event.preventDefault();onFormSubmit();">
+                        <div>
+                            <label>Teljes név: </label><label class="validation-error hide" id="fullNameValidationError"></label>
+                            <input type="text" name="fullName" id="fullName">
+                        </div>
+                        <div>
+                            <label>Email cím: </label>
+                            <input type="text" name="email" id="email">
+                        </div>
+                        <div>
+                            <label>Fizetés: </label>
+                            <input type="text" name="salary" id="salary">
+                        </div>
+                        <div>
+                            <label>Város: </label>
+                            <input type="text" name="city" id="city">
+                        </div>
+                        <div  class="form-action-buttons">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+                <br/>
+                <div class = "employees-table">
+                    <table class="list" id="employeeList">
+                        <thead>
+                            <tr>
+                                <th>Teljes név</th>
+                                <th>Email cím</th>
+                                <th>Fizetés</th>
+                                <th>Város</th>
+                                <th>Lehetőségek</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <script src="script/tablazat.js"></script>
         </div>
     </main>
 

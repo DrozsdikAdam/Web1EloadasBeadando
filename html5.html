@@ -9,9 +9,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat+Underline:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"></link>
-    <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
-    <title>Document</title>
+    <script src="script/webworker.js"></script>
+    <title>WebEA projekt</title>
 
 </head>
 <body>
@@ -93,7 +92,7 @@
                                     return;
                                 }
 
-                                const worker = new Worker('webworker.js');
+                                const worker = new Worker('script/webworker.js');
                                 worker.postMessage({from: from, to: to}); //adatküldés
 
                                 worker.onmessage = function (event) {
@@ -108,7 +107,16 @@
                 </section>
                 <section class="server-sent events" id="harom">
                     <h3>Server-Sent Events</h3>
-                    <p>De úgy volt, hogy nem lehet szerver oldali nyelveket használni...</p>
+                    <div id="result"></div>
+                    <script>
+                        if(typeof(EventSource) !== "undefined") {
+                            var source = new EventSource("stocks.php");
+                            source.onmessage = function(event) {
+                                document.getElementById("result").innerHTML += event.data + "<br>";
+                            };
+                        } else
+                            document.getElementById("result").innerHTML = "Sajnáljuk, a böngészője nem támogatja a server-sent eventset...";
+                    </script>
                 </section>
                 <section class="geo-api" id="negy">
                     <h3>Geolocation API</h3>

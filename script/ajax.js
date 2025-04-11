@@ -17,7 +17,7 @@ async function read() {
   idnev="tablazat";
   str+="<p>Táblázat sorai: "+data.rowCount+"</p>";
   //str+="<p>Last max "+data.maxNum+" records:</p>";
-  str+="<table id="+idnev+"><tr><th>id</th><th>name</th><th>city</th><th>phone</th><th>code</th></tr>";
+  str+="<table class="+idnev+"><tr><th>id</th><th>name</th><th>city</th><th>phone</th><th>code</th></tr>";
   for(let i=0; i<list.length; i++)
     str += "<tr><td>"+list[i].id+"</td><td>"+list[i].name+"</td><td>"+list[i].city+"</td><td>"+list[i].phone+"</td><td>"+list[i].code+"</td></tr>";
   str +="</table>";
@@ -40,9 +40,9 @@ async function create(){
     });
     let data = await response.text(); 
     if(data>0)
-      str="Create successful!";
+      str="Sikeresen létrehozva!";
     else
-    str="Create NOT successful!";
+    str="Létrehozás sikertelen!";
     document.getElementById("createResult").innerHTML=str;
     document.getElementById("name1").value="";
     document.getElementById("city1").value="";
@@ -90,9 +90,9 @@ async function update(){
     });
     let data = await response.text(); 
     if(data>0)
-      str="Update successful!";
+      str="Sikeres frissítés!";
     else
-    str="Update NOT successful!";
+    str="Sikertelen frissítés!";
     document.getElementById("updateResult").innerHTML=str;
     document.getElementById("idUpd").value="";
     document.getElementById("name2").value="";
@@ -118,9 +118,9 @@ async function deleteF(){
     });
     let data = await response.text(); 
     if(data>0)
-      str="Delete successful!";
+      str="Sikeres törlés!";
     else
-    str="Delete NOT successful!";
+    str="Sikertelen törlés!";
     document.getElementById("deleteResult").innerHTML=str;
     document.getElementById("idDel").value="";
     read();

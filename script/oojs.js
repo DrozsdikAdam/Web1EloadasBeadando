@@ -1,5 +1,7 @@
-class Image {
-    constructor(src, x, y, width, height) {
+class Image 
+{
+    constructor(src, x, y, width, height) 
+    {
         this.kep = document.createElement("img");
         this.kep.src = src;
         this.kep.style.position = "absolute";
@@ -33,4 +35,12 @@ class Image {
         this.kep.src = "images/" + randomNum + ".png";
         this.show();
     }
+    returntonormal(x,y,width,height)
+    {
+        this.kep.style.left = 10 + "px";
+        this.kep.style.top = 10 +"px";
+        this.kep.width = 100;
+        this.kep.height = 100;
+    }
+    
 }

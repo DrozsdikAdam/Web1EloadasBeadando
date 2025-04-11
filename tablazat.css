@@ -1,0 +1,89 @@
+.main-container-sections-tablazat{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.employee-form {
+    border-style: solid;
+    padding: 10px;
+    margin: 20px auto 0px;
+    width: 60%;
+}
+.employees-table {
+    border-style: solid;
+    padding: 20px;
+    margin: 0px auto;
+    width: 70%;
+    display: flex;
+}
+
+table{
+    border-collapse: collapse;
+}
+.list{
+    width:100%;
+    table-layout: fixed;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    word-wrap:break-word;
+}
+tr:nth-child(even),table.list thead>tr {
+    background-color: #dddddd;
+}
+input[type=text], input[type=number] {
+    width: 100%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=submit] {
+    width: 30%;
+    background-color: black;
+    color: white;
+    padding: 10px 18px;
+    /* margin: 0px 0; */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    width: 30%;
+    background-color: blue;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form div.form-action-buttons{
+    text-align: center;
+}
+#lehetosegek{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #0000ee;
+    margin: 4px;
+}
+#lehetosegek:hover{
+    cursor: pointer;
+    text-decoration: none;
+    color: #4747e6;
+    margin: 4px;
+}
+label.validation-error{
+    color:   red;
+    margin-left: 5px;
+}
+.hide{
+    display:none;
+}

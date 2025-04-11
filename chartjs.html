@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>Document</title>
+    <title>WebEA projekt</title>
 
 </head>
 <body>
@@ -58,7 +58,7 @@
             <div class="main-container-sections-chartjs">
                 <h3>Adattábla (kattints egy sorra)</h3>
 
-                <table id="dataTable">
+                <table class="charttabla" id="dataTable">
                     <thead>
                         <tr>
                             <th></th>
@@ -155,53 +155,52 @@
                     </tbody>
                 </table>
 
-                <canvas id="myChart" width="400" height="200"></canvas>
-
-                <script>
-                    const table = document.getElementById('dataTable');
-                    const ctx = document.getElementById('myChart').getContext('2d');
-                    let chart;
-                  
-                    const labels = [
-                      'Január', 'Február', 'Március', 'Április', 'Május', 'Június',
-                      'Július', 'Agusztus', 'Szeptember', 'Október', 'November', 'December'
-                    ];
-                  
-                    table.addEventListener('click', function(event) {
-                      const clickedRow = event.target.closest('tr');
-                      if (!clickedRow || clickedRow.rowIndex === 0) return;
-                  
-                      const cells = Array.from(clickedRow.cells).slice(1); // első cella kihagyva
-                      const values = cells.map(cell => Number(cell.textContent));
-                  
-                      if (chart) chart.destroy();
-                  
-                      chart = new Chart(ctx, {
-                        type: 'line',
-                        data: {
-                          labels: labels,
-                          datasets: [{
-                            label: `${clickedRow.cells[0].textContent}`,
-                            data: values,
-                            borderColor: 'blue',
-                            backgroundColor: 'lightblue',
-                            fill: false,
-                            tension: 0.2
-                          }]
-                        },
-                        options: {
-                          responsive: true,
-                          scales: {
-                            y: {
-                              beginAtZero: false
-                            }
-                          }
-                        }
-                      });
-                    });
-                  </script>
+                <canvas class="diagrm" id="myChart" width="400" height="200"></canvas>
             </div>
         </div>
+        <script>
+            const table = document.getElementById('dataTable');
+            const ctx = document.getElementById('myChart').getContext('2d');
+            let chart;
+          
+            const labels = [
+              'Január', 'Február', 'Március', 'Április', 'Május', 'Június',
+              'Július', 'Agusztus', 'Szeptember', 'Október', 'November', 'December'
+            ];
+          
+            table.addEventListener('click', function(event) {
+              const clickedRow = event.target.closest('tr');
+              if (!clickedRow || clickedRow.rowIndex === 0) return;
+          
+              const cells = Array.from(clickedRow.cells).slice(1); // első cella kihagyva
+              const values = cells.map(cell => Number(cell.textContent));
+          
+              if (chart) chart.destroy();
+          
+              chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                  labels: labels,
+                  datasets: [{
+                    label: `${clickedRow.cells[0].textContent}`,
+                    data: values,
+                    borderColor: 'blue',
+                    backgroundColor: 'lightblue',
+                    fill: false,
+                    tension: 0.2
+                  }]
+                },
+                options: {
+                  responsive: true,
+                  scales: {
+                    y: {
+                      beginAtZero: false
+                    }
+                  }
+                }
+              });
+            });
+          </script>
     </main>
 
     <footer class="p-5 bg-dark text-light text-center position-relative">

@@ -11,8 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat+Underline:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"></link>
     <link rel="stylesheet" href="style.css">
-    <script src="oojs.js"></script>
-    <title>Document</title>
+    <script src="script/oojs.js"></script>
+    <title>WebEA projekt</title>
 
 </head>
 <body>
@@ -32,13 +32,13 @@
                             <li class="nav-item dropdown">
                                 <a href="html5.html" class="nav-link dropdown-toggle">Html 5</a>
                                 <div class="dropdown-content">
-                                    <a href="#egy" class="dropdown-item">Web Storage</a>
-                                    <a href="#ketto" class="dropdown-item">Web Workers</a>
-                                    <a href="#harom" class="dropdown-item">Server-Sent Events</a>
-                                    <a href="#negy" class="dropdown-item">Geolocation API</a>
-                                    <a href="#ot" class="dropdown-item">Drag and Drop API</a>
-                                    <a href="#hat" class="dropdown-item">Canvas</a>
-                                    <a href="#het" class="dropdown-item">SVG</a>
+                                    <a href="html5.html#egy" class="dropdown-item">Web Storage</a>
+                                    <a href="html5.html#ketto" class="dropdown-item">Web Workers</a>
+                                    <a href="html5.html#harom" class="dropdown-item">Server-Sent Events</a>
+                                    <a href="html5.html#negy" class="dropdown-item">Geolocation API</a>
+                                    <a href="html5.html#ot" class="dropdown-item">Drag and Drop API</a>
+                                    <a href="html5.html#hat" class="dropdown-item">Canvas</a>
+                                    <a href="html5.html#het" class="dropdown-item">SVG</a>
                                 </div>
                             </li>
                             <li class="nav-item"><a href="chartjs.html" class="nav-link">ChartJS</a></li>
@@ -51,43 +51,57 @@
     </header>
 
     <main>
-        <div class="main-container">
+        <div class="bemutatkozas-main-container">
             <div class="introduction">
                 <H2>Üdvözöljük az OOJS feladaton!</h2>
             </div>
             <div class="main-container-sections-oojs">
-                
-                <div class="tablazat">
-                    <table>
-                        <tr>
-                            <td colspan="6"><strong>Álligasd a képet belátásod szerint</strong></td>
-                        </tr>
-                        <tr>
-                            <td align="right">x:</td><td><input type="number" min="0" id="x-oojs" name="x"></td>
-                            <td align="right">y:</td><td><input type="number" min="0" id="y-oojs" name="y"></td>
-                            <td><button onclick="myimage.putAt(document.getElementById('x-oojs').value,document.getElementById('y-oojs').value)">Put At</button></td>
-                            <td><button onclick="myimage.show()">Show</button></td>
-                        </tr>
-                        <tr>
-                            <td align="right">width:</td><td><input type="number" min="0" id="width-oojs" name="width"></td>
-                            <td align="right">height:</td><td><input type="number" min="0" id="height-oojs" name="height"></td>
-                            <td><button onclick="myimage.resize(document.getElementById('width-oojs').value,document.getElementById('height-oojs').value)">Resize</button></td>
-                            <td><button onclick="myimage.hide()">Hide</button></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4"></td>
-                            <td colspan="2"><button onclick="myimage.newimage()">Új kép</button></td>
-                        </tr>
-                    </table>
+                <div class="oojs-bal">
+                    <div class="oojs-tablazat">
+                        <table>
+                            <tr>
+                                <td colspan="6"><strong>Álligasd a képet belátásod szerint</strong></td>
+                            </tr>
+                            <tr>
+                                <td align="right">x:</td><td><input type="number" min="0" id="x-oojs" name="x"></td>
+                                <td align="right">y:</td><td><input type="number" min="0" id="y-oojs" name="y"></td>
+                                <td><button onclick="myimage.putAt(document.getElementById('x-oojs').value,document.getElementById('y-oojs').value)">Tedd oda</button></td>
+                                <td><button onclick="myimage.show()">Mutasd</button></td>
+                            </tr>
+                            <tr>
+                                <td align="right">width:</td><td><input type="number" min="0" id="width-oojs" name="width" value="100"></td>
+                                <td align="right">height:</td><td><input type="number" min="0" id="height-oojs" name="height" value="100"></td>
+                                <td><button onclick="myimage.resize(document.getElementById('width-oojs').value,document.getElementById('height-oojs').value)">Resize</button></td>
+                                <td><button onclick="myimage.hide()">Elrejtés</button></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><button onclick="myimage.returntonormal()">Vissza az eredetire</button></td>
+                                <td colspan="2"><button onclick="myimage.newimage()">Új kép</button></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-                <div class="kep">
-
+                <div class="oojs-jobb">
+                    <div class="kep"></div>
                 </div>
             </div>
         </div>
     </main>
     <script type="text/javascript">
         var myimage = new Image("images/1.png", 10, 10, 100, 100);
+        function updateInputMaxValues() {
+        const jobbElem = document.querySelector(".oojs-jobb");
+        const widthMax = jobbElem.offsetWidth;
+        const heightMax = jobbElem.offsetHeight;
+
+        document.getElementById("x-oojs").max = widthMax;
+        document.getElementById("y-oojs").max = heightMax;
+        document.getElementById("width-oojs").max = widthMax;
+        document.getElementById("height-oojs").max = heightMax;
+        }
+        document.addEventListener("DOMContentLoaded", updateInputMaxValues);
+
+        window.addEventListener("resize", updateInputMaxValues);
     </script>
     <footer class="p-5 bg-dark text-light text-center position-relative">
         <div class="container">
