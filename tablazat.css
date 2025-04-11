@@ -35,7 +35,7 @@ td, th {
 tr:nth-child(even),table.list thead>tr {
     background-color: #dddddd;
 }
-input[type=text], input[type=number] {
+input[type=text], [type=email], input[type=number] {
     width: 100%;
     padding: 8px 20px;
     margin: 8px 0;

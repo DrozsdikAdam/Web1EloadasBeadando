@@ -59,11 +59,11 @@
                     <form onsubmit="event.preventDefault();onFormSubmit();">
                         <div>
                             <label>Teljes név: </label><label class="validation-error hide" id="fullNameValidationError"></label>
-                            <input type="text" name="fullName" id="fullName">
+                            <input type="text" name="fullName" id="fullName" required>
                         </div>
                         <div>
                             <label>Email cím: </label>
-                            <input type="text" name="email" id="email">
+                            <input type="email" name="email" id="email" required>
                         </div>
                         <div>
                             <label>Fizetés: </label>
@@ -71,7 +71,7 @@
                         </div>
                         <div>
                             <label>Város: </label>
-                            <input type="text" name="city" id="city">
+                            <input type="text" name="city" id="city" required>
                         </div>
                         <div  class="form-action-buttons">
                             <input type="submit" value="Submit">
