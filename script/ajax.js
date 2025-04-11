@@ -25,7 +25,6 @@ async function read() {
 }
 
 async function create(){
-  // name: reserved word
   nameStr = document.getElementById("name1").value;
   city = document.getElementById("city1").value;
   phone = document.getElementById("phone1").value;
@@ -74,7 +73,6 @@ async function getDataForId() {
 }
 
 async function update(){
-  // name: reserved word
   id = document.getElementById("idUpd").value;
   nameStr = document.getElementById("name2").value;
   city = document.getElementById("city2").value;
@@ -104,7 +102,6 @@ async function update(){
     document.getElementById("updateResult").innerHTML="Validation error!!";
 }
 
-//delete: resetved word
 async function deleteF(){
   id = document.getElementById("idDel").value;
   if(id.length>0 && id.length<=30){

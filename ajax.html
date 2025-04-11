@@ -63,27 +63,27 @@
                 <div class="jobb">
                     <div id = 'createDiv'>
                         <h1>Adj új elemet a táblázathoz!</h1>
-                        <strong>Név</strong> (kötelező, max 30 karakter): <input id="name1" type="text"></input><br>
-                        <strong>Város</strong> (kötelező, max 30 karakter): <input id="city1" type="text"></input><br>
-                        <Strong>Telefonszám</strong> (kötelező, max 30 karakter): <input id="phone1" type="text"></input><br>
+                        <strong>Név</strong> (kötelező, max 30 karakter): <input id="name1" type="text" max="30" required></input><br>
+                        <strong>Város</strong> (kötelező, max 30 karakter): <input id="city1" type="text" max="30" required></input><br>
+                        <Strong>Telefonszám</strong> (kötelező, max 30 karakter): <input id="phone1" type="text" max="30" required></input><br>
                         <button id="gomb" type="submit" onclick="create();">Hozzáadás</button><br>
                         <div id = 'createResult'></div>
                         <hr>
                     </div> 
                     <div id = 'updateDiv'>
                         <h1>Módosítsd az általatad kiválasztott sort!</h1>
-                        <strong>ID</strong> (kötelező): <input id="idUpd" type="text"></input>
+                        <strong>ID</strong> (kötelező): <input id="idUpd" type="text" max="30" required></input>
                         <button type="submit" onclick="getDataForId();">Mutasd</button><br>
-                        <strong>Név</strong> (kötelező, max 30 karakter): <input id="name2" type="text"></input><br>
-                        <strong>Város</strong> (kötelező, max 30 karakter): <input id="city2" type="text"></input><br>
-                        <Strong>Telefonszám</strong> (kötelező, max 30 karakter): <input id="phone2" type="text"></input><br>
+                        <strong>Név</strong> (kötelező, max 30 karakter): <input id="name2" type="text" max="30" required></input><br>
+                        <strong>Város</strong> (kötelező, max 30 karakter): <input id="city2" type="text" max="30" required></input><br>
+                        <Strong>Telefonszám</strong> (kötelező, max 30 karakter): <input id="phone2" type="text" max="30" required></input><br>
                         <button id="gomb" type="submit" onclick="update();">Frissítés</button><br>
                         <div id = 'updateResult'></div>      
                         <hr>
                     </div> 
                     <div id = 'deleteDiv'>
                         <h1>Vagy akár törölhetsz elemet.</h1>
-                        <strong>ID</strong> (kötelező): <input id="idDel" type="text"></input><br> 
+                        <strong>ID</strong> (kötelező): <input id="idDel" type="text" max="30" required></input><br> 
                         <button id="gomb" type="submit" onclick="deleteF();">Törlés</button><br>
                         <div id = 'deleteResult'></div>      
                     </div>
