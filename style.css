@@ -54,7 +54,13 @@ header{
 
 .bemutatkozas-introduction{
     margin: 20px auto 0px auto;
-    width: 500px;
+    width: 100%;
+    flex-direction: column;
+}
+
+.bemutatkozas-introduction hr{
+    margin: 20px auto 0px auto;
+    width: 60%;
     flex-direction: column;
 }
 
@@ -87,6 +93,20 @@ header{
     text-align: center;
     font-family: "Montserrat Underline", sans-serif;
     font-size: 29px;
+}
+.reactbuttondiv{
+    margin: 0px auto;
+}
+
+#reactbutton{
+    background-color: rgb(34, 34, 34);
+    color: rgb(153, 153, 153);
+}
+#reactbutton:hover{
+    transition: 0.5s;
+    border-radius: 15px;
+    background-color: rgb(153, 153, 153);
+    color: rgb(34, 34, 34);
 }
 /*TÁBLÁZAT CSS RÉSZ*/
 /*tablazat.css*/
@@ -295,5 +315,27 @@ header{
         min-height: 200px;
         height: 100%;
         display: flex;
+    }
+}
+@media (max-width: 600px) {
+    .bemutatkozas-main-container{
+        position: relative;
+        background-color: aqua;
+        height: 100vh;
+        width: 95%;
+        margin: 5px auto;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .main-container{
+        position: relative;
+        background-color: aqua;
+        height: 100%;
+        width: 95%;
+        margin: 5px auto;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
     }
 }
